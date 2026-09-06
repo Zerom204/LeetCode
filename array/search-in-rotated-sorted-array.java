@@ -21,7 +21,7 @@ class Solution {
                     }
                 }
             }
-            if(nums[mid]<=nums[0]){
+            else{
                 if(nums[mid]>target){
                     ub=mid-1;
                 }
