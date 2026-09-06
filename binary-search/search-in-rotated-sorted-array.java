@@ -17,7 +17,7 @@ class Solution {
                         lb=mid+1;
                     }
                     else{
-                        ub=mid+1;
+                        ub=mid-1;
                     }
                 }
             }
