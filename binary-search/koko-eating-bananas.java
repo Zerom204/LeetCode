@@ -1,6 +1,6 @@
 class Solution {
-    public int hours(int speed,int[] a){
-        int hours=0;
+    public long hours(int speed,int[] a){
+        long hours=0;
         for(int i=0;i<a.length;i++){
             hours+=a[i]/speed;
             if(a[i]%speed!=0){
