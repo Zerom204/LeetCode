@@ -14,7 +14,7 @@ class Solution {
             else if(guess<target){
                 column++;
             }
-            else{
+            if(guess==target{
                 return true;
             }
         }
