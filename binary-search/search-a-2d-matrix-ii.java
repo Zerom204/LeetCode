@@ -6,7 +6,7 @@ class Solution {
         int row=m-1;
         int column=0;
 
-        while(row>0&&column<n){
+        while(row>=0&&column<n){
             int guess=matrix[row][column];
             if(guess>target){
                 row--;
