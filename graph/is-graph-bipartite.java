@@ -27,7 +27,7 @@ class Solution {
         }
         for(int i=0;i<v;i++){
             if(colors.get(i)==-1){
-                res=dfs(adj,0,0,colors,res);
+                res=dfs(adj,i,0,colors,res);
                 if(res==false){
                     return false;
                 }
