@@ -8,7 +8,7 @@ class Solution {
                 res=false;
             }
             if(colors.get(neighbour)==-1){
-                dfs(adj,neighbour,1-c,colors,res);
+                res=dfs(adj,neighbour,1-c,colors,res);
             }
         }
         return res;
@@ -33,6 +33,6 @@ class Solution {
                 }
             }
         }
-        return true; 
+        return res; 
     }
 }
