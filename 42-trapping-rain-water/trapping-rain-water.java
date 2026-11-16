@@ -1,26 +1,23 @@
 class Solution {
     public int trap(int[] height) {
+        //two pointer approach
         int n=height.length;
-        if(n==0)    return 0;
-        //prefix max
-        ArrayList<Integer> prefix=new ArrayList<>();
-        prefix.add(height[0]);
-        for(int i=1;i<n;i++){
-            prefix.add(Math.max(height[i],prefix.get(i-1)));
+        int lmax=0,rmax=0,l=0,r=n-1,total=0;
+        while(l<=r){
+            if(height[l]<=height[r]){
+                if(height[l]>lmax){
+                    lmax=height[l];
+                }
+                else    total+=lmax-height[l];
+                l++;
+            }
+            else{
+                if(height[r]>rmax){
+                    rmax=height[r];
+                }
+                else    total+=rmax-height[r];
+                r--;
+            }
         }
-        //suffix max
-        ArrayList<Integer> suffix=new ArrayList<>();
-        suffix.add(height[n-1]);
-        for(int i=n-2;i>=0;i--){
-            suffix.add(Math.max(height[i],suffix.get(suffix.size()-1)));
-        }
-        Collections.reverse(suffix);
-        //calculations
-        int watercapacity=0;
-        for(int i=0;i<n;i++){
-            if(height[i]<suffix.get(i) && height[i]<prefix.get(i))
-            watercapacity+=Math.min(suffix.get(i),prefix.get(i))-height[i];
-        }
-        return watercapacity;
-    }
+        return total;    }
 }
