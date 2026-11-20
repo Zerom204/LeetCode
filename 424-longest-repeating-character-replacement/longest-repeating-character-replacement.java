@@ -28,10 +28,10 @@ class Solution {
                 }
                 left++;
                 length=right-left+1;
-                maxfreq=0;
+                /*maxfreq=0;
                 for(Character b: map.keySet()){
                     maxfreq=Math.max(maxfreq,map.get(b));
-                }
+                }*/
             }
             length=right-left+1;
             res=Math.max(res,length);
